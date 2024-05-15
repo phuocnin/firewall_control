@@ -4,7 +4,7 @@ html(lang='en')
     meta(name='google-site-verification', content='QpKVM2m0UKlXKl31fGuUzO4XKHt0KhLsWNMCokxBlyE')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width,initial-scale=1')
-    title Quản lý đề tài nghiên cứu
+    title Firewall 
     //  Google Font: Source Sans Pro 
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')
     //  Font Awesome Icons 
@@ -45,17 +45,12 @@ html(lang='en')
     script(src='/mjs/edit.council.js')
     //  summernote 
     link(rel='stylesheet', href='/assets/plugins/summernote/summernote-bs4.min.css')
-    script(src="/socket.io/socket.io.js")
-    script.
-      const socket = io();
-      
+    
   
   body.hold-transition.sidebar-mini.layout-fixed.layout-navbar-fixed.layout-footer-fixed
 
-    if !user 
-      script.
-        window.location.assign("/login") ;
-    else
+    
+    if(1)
       .wrapper
         include topbar
         include sidebar
@@ -68,16 +63,8 @@ html(lang='en')
             .container-fluid
               .row.mb-2
                 .col-sm-6
-                  - let role = user.role
-                  if role == 'sinh_vien'
-                    - role= 'Sinh viên'
-                  else if role == 'giang_vien'
-                    - role= 'Giảng viên'
-                  else if role == 'admin'
-                    - role= 'Admin'
-                  else
-                    - role = "Xin chào"
-                  h1.m-0= role
+               
+                  h1.m-0 Firewall manager
               hr.border-primary
           section.content            
             .container-fluid

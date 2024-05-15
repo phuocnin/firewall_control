@@ -13,12 +13,12 @@ function deleteNotify(notifyId) {
       });
   }
 }
-function deleteTopic(topicId) {
-  const confirmation = confirm("Bạn có chắc chắn muốn xóa Topic này?");
+function changeSwitchState(op, switchId) {
+  const confirmation = confirm("you sure");
   if (confirmation) {
     // Sử dụng Axios để thực hiện yêu cầu DELETE
     axios
-      .delete(`/api/v1/topics/${topicId}`)
+      .put(`http://127.0.0.1:8080/firewall/module/${op}/${switchId}`)
       .then((response) => {
         location.reload();
       })
